@@ -30,3 +30,13 @@ def write_file(file_name):
 
 open_file(file_list)
 write_file(list_1)
+
+
+def get_data(x):
+    return len(str(x.values()))
+
+
+list_2 = sorted(list_1, key=get_data)
+
+open_file(file_list)
+write_file(list_2)
