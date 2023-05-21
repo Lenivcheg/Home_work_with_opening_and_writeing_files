@@ -48,6 +48,7 @@ def get_shop_list_by_dishes(dis, person_count):
                 shop_list[name] = shop_list_1
             pprint(shop_list)
 
+
 print('--------------------')
 get_shop_list_by_dishes(['Фахитос', 'Омлет'], 1)
 print('--------------------')
