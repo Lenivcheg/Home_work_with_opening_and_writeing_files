@@ -15,9 +15,11 @@ with open('recipe.txt', 'rt', encoding='utf-8') as f:
                 'measure': unit
             }
             dish.append(dishes)
-
         f.readline()
         cook_book[dish_name] = dish
+
+for dish in cook_book:
+    pprint(f'{dish}: \n{cook_book.get(dish)}')
 
 
 def get_shop_list_by_dishes(dis, person_count):
@@ -46,7 +48,7 @@ def get_shop_list_by_dishes(dis, person_count):
                 shop_list[name] = shop_list_1
             pprint(shop_list)
 
-
-get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 4)
-print('')
+print('--------------------')
+get_shop_list_by_dishes(['Фахитос', 'Омлет'], 1)
+print('--------------------')
 get_shop_list_by_dishes('Омлет', 2)
