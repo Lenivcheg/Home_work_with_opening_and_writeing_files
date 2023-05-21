@@ -28,12 +28,16 @@ def get_shop_list_by_dishes(dis, person_count):
         for b in dis:
             if b in cook_book:
                 for i in cook_book.get(b):
+                    if i.get('ingredient_name') in shop_list:
+                        i['quantity'] = int(i.get('quantity')) * 2
+                        shop_list_1.update(i)
                     name, measure, quantity = i.get('ingredient_name'), i.get('measure'), \
                         int(i.get('quantity')) * person_count
                     shop_list_1 = {
                         'measure': measure,
                         'quantity': quantity
                     }
+
                     shop_list[name] = shop_list_1
         pprint(shop_list)
     else:
@@ -50,6 +54,6 @@ def get_shop_list_by_dishes(dis, person_count):
 
 
 print('--------------------')
-get_shop_list_by_dishes(['Фахитос', 'Омлет'], 1)
+get_shop_list_by_dishes(['Фахитос', 'Омлет'], 3)
 print('--------------------')
 get_shop_list_by_dishes('Омлет', 2)
